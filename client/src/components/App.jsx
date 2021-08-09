@@ -32,6 +32,10 @@ const badges = [
     value: 'pb=2020-03-sephora-clean-2019&',
   },
   {
+    name: 'Clean+',
+    value: 'pb=clean-planet-positive-badge-2021&',
+  },
+  {
     name: 'Allure',
     value: 'pb=2020-03-allure-best-2018&',
   },
@@ -39,6 +43,7 @@ const badges = [
     name: 'Value',
     value: 'pb=2020-03-sephora-value-2019&',
   },
+
 ];
 
 class App extends React.Component {
