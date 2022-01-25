@@ -80,8 +80,13 @@ function Broadcast(props) {
             {' '}
             Certona 3x1 grid
           </label>
+          <label htmlFor="cthreebyoneca">
+            <input type="radio" id="cthreebyoneca" name="gridType" value="cthreebyoneca" onChange={handleInputChange} checked={gridType === 'cthreebyoneca'} />
+            {' '}
+            CA Certona 3x1 grid
+          </label>
         </div>
-        {gridType === 'ctwobyfour' || gridType === 'cthreebyone'
+        {gridType === 'ctwobyfour' || gridType === 'cthreebyone' || gridType === 'cthreebyoneca'
           ? (
             <div id="tagname">
               <label htmlFor="certonatag">
