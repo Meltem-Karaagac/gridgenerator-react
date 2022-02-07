@@ -22,7 +22,7 @@ app.use(cors());
 //   });
 // });
 app.get('/skus/:sku', (req, res) => {
-  const regionPath = (req.query.country === 'ca') ? 'ca/en/' : '';
+  const regionPath = (req.query.country === 'ca') ? 'ca/en/' : (req.query.country === 'caFR') ? 'ca/fr/': '';
   const url = `https://www.sephora.com/${regionPath}${path.join('api/catalog/skus', req.params.sku)}`;
   axios({
     url,
