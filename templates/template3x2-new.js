@@ -2,13 +2,13 @@ import displayKlarnaPrice from './snippets';
 import klarnaPayment from './templateKlarna';
 
 /* eslint-disable no-else-return */
-export default function template3x2(products, showTags, showBrand, showKlarna) {
+export default function template3x2(products, showTags, showBrand, showKlarna, country) {
   function productCell(p, tags, klarna) {
     return `<table width="200" border="0" cellspacing="0" cellpadding="0" align="center">
         <tr>
           <td valign="top">
             ${p.imageLink}
-              <img alt="${p.productName}" border="0" height="200" src="https://www.sephora.com/productimages/sku/s${p.skuId}-main-hero.jpg?${p.badge.value}imwidth=450" style="display:block; margin: 10px 0;" width="200"/>
+              <img alt="${p.productName}" border="0" height="200" src="https://www.sephora.com/productimages/sku/s${p.skuId}-main-hero.jpg?${p.badge.value}${country === 'caFR' ? 'locale=ca_fr&' : ''}imwidth=450" style="display:block; margin: 10px 0;" width="200"/>
             </a>
           </td>
         </tr>

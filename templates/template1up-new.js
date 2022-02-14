@@ -1,7 +1,7 @@
 import displayKlarnaPrice from './snippets';
 import klarnaPayment from './templateKlarna';
 
-export default function template1up(products, showTags, showBrand, showKlarna) {
+export default function template1up(products, showTags, showBrand, showKlarna, country) {
   return `<!-- grid gen -->
   <table width="700" border="0" cellspacing="0" cellpadding="0" align="center">
     <tr>
@@ -15,7 +15,7 @@ export default function template1up(products, showTags, showBrand, showKlarna) {
           <tr>
             <td align="center">
               ${p.imageLink}
-                <img alt="${p.productName}" border="0" height="450" src="https://www.sephora.com/productimages/sku/s${p.skuId}-main-hero.jpg?${p.badge.value}imwidth=450" style="display:block; margin: 10px 0;" width="450">
+                <img alt="${p.productName}" border="0" height="450" src="https://www.sephora.com/productimages/sku/s${p.skuId}-main-hero.jpg?${p.badge.value}${country === 'caFR' ? 'locale=ca_fr&' : ''}imwidth=450" style="display:block; margin: 10px 0;" width="450">
               </a>
             </td>
           </tr>
