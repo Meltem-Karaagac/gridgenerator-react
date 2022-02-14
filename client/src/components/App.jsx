@@ -12,7 +12,7 @@ import template2x4new from '../../../templates/template2x4-new';
 import template3x2new from '../../../templates/template3x2-new';
 import templatec2x4 from '../../../templates/templateC2x4';
 import templatec3x1 from '../../../templates/templateC3x1';
-import templatec3x1CA from '../../../templates/templateC3x1CA';
+// import templatec3x1CA from '../../../templates/templateC3x1CA';
 import templatebirb from '../../../templates/template-birb';
 import TemplateChooser from './TemplateChooser';
 import Broadcast from './Broadcast';
@@ -268,11 +268,11 @@ class App extends React.Component {
     } else if (products.length > 0 && gridType === 'threebytwonew') {
       productsHtml = template3x2new(products, showTags, showBrand, showKlarna).replace(/\n\s+\n/g, '\n');
     } else if (gridType === 'ctwobyfour') {
-      productsHtml = templatec2x4(certonaTag).replace(/\n\s+\n/g, '\n');
+      productsHtml = templatec2x4(certonaTag, countryType).replace(/\n\s+\n/g, '\n');
     } else if (gridType === 'cthreebyone') {
-      productsHtml = templatec3x1(certonaTag).replace(/\n\s+\n/g, '\n');
-    } else if (gridType === 'cthreebyoneca') {
-      productsHtml = templatec3x1CA(certonaTag).replace(/\n\s+\n/g, '\n');
+      productsHtml = templatec3x1(certonaTag, countryType).replace(/\n\s+\n/g, '\n');
+    // } else if (gridType === 'cthreebyoneca') {
+    //   productsHtml = templatec3x1CA(certonaTag).replace(/\n\s+\n/g, '\n');
     } else if (birbProducts.length > 0 && templateType === 'birb') {
       productsHtml = templatebirb(birbProducts, birbType).replace(/\n\s+\n/g, '\n');
     }
