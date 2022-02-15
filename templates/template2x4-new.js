@@ -2,7 +2,7 @@ import displayKlarnaPrice from './snippets';
 import klarnaPayment from './templateKlarna';
 
 /* eslint-disable no-else-return */
-export default function template2x4(products, showTags, showBrand, showKlarna) {
+export default function template2x4(products, showTags, showBrand, showKlarna, country) {
   return `<!-- grid gen -->
   <table width="700" border="0" cellspacing="0" cellpadding="0" align="center">
     <tr>
@@ -19,7 +19,7 @@ export default function template2x4(products, showTags, showBrand, showKlarna) {
               <tr>
                 <td valign="top">
                   ${p.imageLink}
-                    <img alt="${p.productName}" border="0" height="280" src="https://www.sephora.com/productimages/sku/s${p.skuId}-main-hero.jpg?${p.badge.value}imwidth=450" style="display:block; margin: 10px 0;" width="280"/>
+                    <img alt="${p.productName}" border="0" height="280" src="https://www.sephora.com/productimages/sku/s${p.skuId}-main-hero.jpg?${p.badge.value}${country === 'caFR' ? 'locale=ca_fr&' : ''}imwidth=450" style="display:block; margin: 10px 0;" width="280"/>
                   </a>
                 </td>
               </tr>
@@ -53,7 +53,7 @@ export default function template2x4(products, showTags, showBrand, showKlarna) {
               <tr>
                 <td valign="top">
                   ${p.imageLink}
-                    <img alt="${p.productName}" border="0" height="280" src="https://www.sephora.com/productimages/sku/s${p.skuId}-main-hero.jpg?${p.badge.value}imwidth=450" style="display:block; margin: 10px 0;" width="280"/>
+                    <img alt="${p.productName}" border="0" height="280" src="https://www.sephora.com/productimages/sku/s${p.skuId}-main-hero.jpg?${p.badge.value}${country === 'caFR' ? 'locale=ca_fr&' : ''}imwidth=450" style="display:block; margin: 10px 0;" width="280"/>
                   </a>
                 </td>
               </tr>
