@@ -347,7 +347,8 @@ button {
   margin-bottom: 10px;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: Georgia, times, serif;
 }
 
@@ -364,7 +365,8 @@ label {
 #badges,
 #typeofgrid,
 #tagname,
-#typeofbirb {
+#typeofbirb,
+#country {
   background-color: rgb(246, 246, 248);
   border-radius: 5px;
   padding: 12px;
@@ -374,7 +376,8 @@ label {
 
 #typeofgrid,
 #checkboxes,
-#badges {
+#badges,
+#country {
   display: flex;
   flex-direction: column;
   margin-right: 10px;
@@ -382,7 +385,8 @@ label {
 
 #typeofgrid label,
 #checkboxes label,
-#badges label {
+#badges label,
+#country label {
   white-space: nowrap;
 }
 

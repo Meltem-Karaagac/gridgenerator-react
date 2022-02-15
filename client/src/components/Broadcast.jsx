@@ -16,7 +16,9 @@ function Broadcast(props) {
             <p>Paste your HTML links here, one each line:</p>
             <textarea className="links" id="links" name="textareaValue" value={textareaValue} onChange={handleInputChange} />
           </div>
-          <div className="form-row" id="country">
+          <input type="submit" value="Submit" id="submit" />
+        </form>
+        <div id="country">
             <label htmlFor="country-us">
               <input type="radio" id="country-us" name="countryType" value="us" onChange={handleInputChange} checked={countryType === 'us'} />
               {' '}
@@ -33,8 +35,6 @@ function Broadcast(props) {
               Canada FR
             </label>
           </div>
-          <input type="submit" value="Submit" id="submit" />
-        </form>
         <div id="typeofgrid">
           <h3>Grid Type</h3>
           <label htmlFor="oneup">
