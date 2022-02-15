@@ -376,8 +376,7 @@ label {
 
 #typeofgrid,
 #checkboxes,
-#badges,
-#country {
+#badges {
   display: flex;
   flex-direction: column;
   margin-right: 10px;
