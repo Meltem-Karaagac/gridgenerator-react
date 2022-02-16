@@ -12,11 +12,7 @@ function Broadcast(props) {
       <h2>Product Information</h2>
       <div className="columns">
         <form onSubmit={handleFormSubmit} id="linkgens">
-          <div>
-            <p>Paste your HTML links here, one each line:</p>
-            <textarea className="links" id="links" name="textareaValue" value={textareaValue} onChange={handleInputChange} />
-          </div>
-          <div className="form-row" id="country">
+        <div id="country">
             <label htmlFor="country-us">
               <input type="radio" id="country-us" name="countryType" value="us" onChange={handleInputChange} checked={countryType === 'us'} />
               {' '}
@@ -32,6 +28,10 @@ function Broadcast(props) {
               {' '}
               Canada FR
             </label>
+          </div>
+          <div>
+            <p>Paste your HTML links here, one each line:</p>
+            <textarea className="links" id="links" name="textareaValue" value={textareaValue} onChange={handleInputChange} />
           </div>
           <input type="submit" value="Submit" id="submit" />
         </form>
