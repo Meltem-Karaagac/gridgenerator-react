@@ -23,8 +23,8 @@ function Broadcast(props) {
               {' '}
               Canada EN
             </label>
-            <label htmlFor="country-ca">
-              <input type="radio" id="country-ca" name="countryType" value="caFR" onChange={handleInputChange} checked={countryType === 'caFR'} />
+            <label htmlFor="country-ca-fr">
+              <input type="radio" id="country-ca-fr" name="countryType" value="caFR" onChange={handleInputChange} checked={countryType === 'caFR'} />
               {' '}
               Canada FR
             </label>
