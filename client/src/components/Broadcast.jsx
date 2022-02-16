@@ -12,7 +12,7 @@ function Broadcast(props) {
       <h2>Product Information</h2>
       <div className="columns">
         <form onSubmit={handleFormSubmit} id="linkgens">
-        <div className="form-row"id="country">
+        <div id="country">
             <label htmlFor="country-us">
               <input type="radio" id="country-us" name="countryType" value="us" onChange={handleInputChange} checked={countryType === 'us'} />
               {' '}
