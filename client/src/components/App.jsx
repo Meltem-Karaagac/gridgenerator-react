@@ -99,7 +99,7 @@ class App extends React.Component {
           price = data.listPrice.split('.')[0];
         }
         const tags = [];
-        if (country == 'caFR') {
+        if (country === 'caFR') {
           if (data.isNew) {
             tags.push('NOUVEAUTÉ');
           }
