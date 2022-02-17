@@ -136,6 +136,8 @@ function Broadcast(props) {
                         <ul>
                           {badges.map((badge, badgeIdx) => {
                             const id = `product${index}badge${badgeIdx}`;
+                            const allureBadge = 'allure';
+                            if(badgeIdx != '3'){
                             return (
                               <li key={product.skuId + badge.name}>
                                 <label htmlFor={id}>
@@ -145,6 +147,17 @@ function Broadcast(props) {
                                 </label>
                               </li>
                             );
+                            } else {
+                              return(
+                                <li key={product.skuId + 'allure'}>
+                                <label htmlFor={id}>
+                                  <input type="radio" id={id} name={name} checked={product.badge.name === badge.name} onChange={() => setBadge(index, badge)} />
+                                  {' '}
+                                  {'Allure'}
+                                </label>
+                              </li>
+                              )
+                            }
                           })}
                         </ul>
                       </React.Fragment>
