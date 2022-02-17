@@ -112,8 +112,7 @@ class App extends React.Component {
           if (data.isOnlineOnly) {
             tags.push('EN<span>&nbsp;</span>LIGNE<span>&nbsp;</span>SEULEMENT');
           }
-        }
-        else {
+        } else {
           if (data.isNew) {
             tags.push('NEW');
           }
