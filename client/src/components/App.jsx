@@ -99,17 +99,32 @@ class App extends React.Component {
           price = data.listPrice.split('.')[0];
         }
         const tags = [];
-        if (data.isNew) {
-          tags.push('NEW');
-        }
-        if (data.isSephoraExclusive) {
-          tags.push('ONLY<span>&nbsp;</span>AT<span>&nbsp;</span>SEPHORA');
-        }
-        if (data.isLimitedEdition) {
-          tags.push('LIMITED<span>&nbsp;</span>EDITION');
-        }
-        if (data.isOnlineOnly) {
-          tags.push('ONLINE<span>&nbsp;</span>ONLY');
+        if (country === 'caFR') {
+          if (data.isNew) {
+            tags.push('NOUVEAUTÉ');
+          }
+          if (data.isSephoraExclusive) {
+            tags.push('EXCLUSIVITÉ<span>&nbsp;</span>SEPHORA');
+          }
+          if (data.isLimitedEdition) {
+            tags.push('SÉRIE<span>&nbsp;</span>LIMITÉE');
+          }
+          if (data.isOnlineOnly) {
+            tags.push('EN<span>&nbsp;</span>LIGNE<span>&nbsp;</span>SEULEMENT');
+          }
+        } else {
+          if (data.isNew) {
+            tags.push('NEW');
+          }
+          if (data.isSephoraExclusive) {
+            tags.push('ONLY<span>&nbsp;</span>AT<span>&nbsp;</span>SEPHORA');
+          }
+          if (data.isLimitedEdition) {
+            tags.push('LIMITED<span>&nbsp;</span>EDITION');
+          }
+          if (data.isOnlineOnly) {
+            tags.push('ONLINE<span>&nbsp;</span>ONLY');
+          }
         }
         const item = {
           skuId: data.skuId,
