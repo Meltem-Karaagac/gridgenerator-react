@@ -37,8 +37,14 @@ const badges = [
     value: 'pb=clean-planet-positive-badge-2021&',
   },
   {
-    name: 'Allure',
-    value: 'pb=2020-03-allure-best-2018&',
+    name: {
+      allure:{
+        '2018': 'pb=2020-03-allure-best-2018&',
+        '2019': 'pb=2020-03-allure-best-2019&',
+        '2020': 'pb=allure-best-2020&',
+        '2021': 'pb=allure-best-2021-badge&'
+      }
+    }
   },
   {
     name: 'Value',
