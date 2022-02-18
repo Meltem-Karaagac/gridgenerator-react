@@ -87,6 +87,7 @@ class App extends React.Component {
     this.closeModal = this.closeModal.bind(this);
     this.checkBadge = this.checkBadge.bind(this);
     this.setBadge = this.setBadge.bind(this);
+    this.showAllureYears = this.showAllureYears.bind(this);
   }
 
   // sending get request to proxy
@@ -164,6 +165,15 @@ class App extends React.Component {
         };
         return item;
       });
+  }
+
+  showAllureYears (productIdx) {
+    const {products} = this.state;
+    const newProduct = { ...products[productIdx], isAllure: true}
+    console.log('newProduct', newProduct)
+    products[productIdx] = newProduct;
+    const newProducts = [...products];
+    this.setState({ products: newProducts });
   }
 
   setBadge(productIdx, badge) {
@@ -345,6 +355,7 @@ class App extends React.Component {
                 handleFormSubmit={this.handleFormSubmit}
                 handleInputChange={this.handleInputChange}
                 setBadge={this.setBadge}
+                showAllureYears={this.showAllureYears}
               />
             )}
           <div id="codewindow">

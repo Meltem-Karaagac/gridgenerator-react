@@ -5,7 +5,7 @@ function Broadcast(props) {
   const {
     handleFormSubmit, handleInputChange, textareaValue,
     countryType, gridType, showTags, showBrand, showKlarna,
-    products, badges, setBadge, certonaTag,
+    products, badges, setBadge, certonaTag,showAllureYears,
   } = props;
   return (
     <div className="rows">
@@ -136,7 +136,7 @@ function Broadcast(props) {
                         <ul>
                           {badges.map((badge, badgeIdx) => {
                             const id = `product${index}badge${badgeIdx}`;
-                            const allureBadge = 'allure';
+
                             if(badgeIdx != '3'){
                             return (
                               <li key={product.skuId + badge.name}>
@@ -151,7 +151,7 @@ function Broadcast(props) {
                               return(
                                 <li key={product.skuId + 'allure'}>
                                 <label htmlFor={id}>
-                                  <input type="radio" id={id} name={name} checked={product.badge.name === badge.name} onChange={() => setBadge(index, badge)} />
+                                  <input type="radio" id={id} name={name} checked={product.badge.name === badge.name} onChange={() => showAllureYears(index)} />
                                   {' '}
                                   {'Allure'}
                                 </label>
@@ -159,6 +159,23 @@ function Broadcast(props) {
                               )
                             }
                           })}
+                        </ul>
+                        <ul>
+                        {product.isAllure && 
+                        // console.log(badges.name.allure)
+                        Object.keys(badges[3].name.allure).map((item, i)=>{
+                          console.log(item)
+                          return(
+                            <li key={product.skuId + 'allure' + item}>
+                            <label htmlFor={item}>
+                              <input type="radio" id={item} name={name} onChange={() => showAllureYears(index)} />
+                              {' '}
+                              {item}
+                            </label>
+                          </li>
+                          )
+                        })
+                        }
                         </ul>
                       </React.Fragment>
                     );
