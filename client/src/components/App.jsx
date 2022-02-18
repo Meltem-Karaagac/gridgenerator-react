@@ -37,20 +37,18 @@ const badges = [
     value: 'pb=clean-planet-positive-badge-2021&',
   },
   {
-    name: {
-      allure:{
+    name: 'allure',
+    value:{
         '2018': 'pb=2020-03-allure-best-2018&',
         '2019': 'pb=2020-03-allure-best-2019&',
         '2020': 'pb=allure-best-2020&',
         '2021': 'pb=allure-best-2021-badge&'
       }
-    }
   },
   {
     name: 'Value',
     value: 'pb=2020-03-sephora-value-2019&',
   },
-
 ];
 
 class App extends React.Component {
@@ -166,22 +164,20 @@ class App extends React.Component {
       });
   }
 
-  showAllureYears (productIdx) {
+  showAllureYears (badge, productIdx) {
     const {products} = this.state;
     const newProduct = { ...products[productIdx], isAllure: true}
-    console.log('newProduct', newProduct)
-    products[productIdx] = newProduct;
+    const nextNewProduct = { ...newProduct, badgeYears:badge};
     const newProducts = [...products];
+    newProducts[productIdx] = nextNewProduct;
     this.setState({ products: newProducts });
   }
 
   setBadge(productIdx, badge) {
-    console.log('badge', badge)
     const isAllure = badge.name != 'allure' ? false : true;
     const { products } = this.state;
     const newProduct = { ...products[productIdx], badge };
     const nextNewProduct = { ...newProduct, isAllure };
-    console.log('nextNewProduct', newProduct)
     const newProducts = [...products];
     newProducts[productIdx] = nextNewProduct;
     this.setState({ products: newProducts });

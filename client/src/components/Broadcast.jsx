@@ -136,12 +136,11 @@ function Broadcast(props) {
                         <ul>
                           {badges.map((badge, badgeIdx) => {
                             const id = `product${index}badge${badgeIdx}`;
-
-                            if(badgeIdx != '3'){
+                            if(badge.name !== 'allure'){
                             return (
                               <li key={product.skuId + badge.name}>
                                 <label htmlFor={id}>
-                                  <input type="radio" id={id} name={name} checked={product.badge.name === badge.name} onChange={() => setBadge(index, badge)} />
+                                  <input type="radio" id={id} name={id} checked={product.badge.name === badge.name} onChange={() => setBadge(index, badge)} />
                                   {' '}
                                   {badge.name}
                                 </label>
@@ -151,30 +150,32 @@ function Broadcast(props) {
                               return(
                                 <li key={product.skuId + 'allure'}>
                                 <label htmlFor={id}>
-                                  <input type="radio" id={id} name={name} checked={product.badge.name === badge.name} onChange={() => showAllureYears(index)} />
+                                  <input type="radio" id={id} name={id} checked={product.badge.name === badge.name} onChange={() => showAllureYears(badge, index)} />
                                   {' '}
                                   {'Allure'}
                                 </label>
                               </li>
                               )
                             }
-                          })}
+                          })
+                          }
                         </ul>
                         <ul>
-                        {product.isAllure && 
-                        Object.keys(badges[3].name.allure).map((item, i)=>{
-                          const badge = {name: 'allure', value: badges[3].name.allure[item]}
-                          return(
-                            <li key={product.skuId + 'allure' + item}>
-                            <label htmlFor={item}>
-                              <input type="radio" id={item} name={name} onChange={() => setBadge(index, badge)} />
-                              {' '}
-                              {item}
-                            </label>
-                          </li>
-                          )
-                        })
-                        }
+                          {product.isAllure && 
+                            Object.keys(product.badgeYears.value).map((year, idx) => {
+                              const badge = {name: 'allure', value: product.badgeYears.value[year], year: year}
+                              const id = `${product.skuId}${year} `
+                              return(
+                                <li key={product.skuId + 'isAllure' + year}>
+                                  <label htmlFor={id}>
+                                    <input type="radio" id={id} name={id} onChange={() => setBadge(index, badge)} checked={product.badge.year === year }/>
+                                    {' '}
+                                    {year}
+                                  </label>
+                                </li>
+                              )
+                            })
+                          }
                         </ul>
                       </React.Fragment>
                     );
