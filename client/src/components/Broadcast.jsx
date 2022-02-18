@@ -162,10 +162,8 @@ function Broadcast(props) {
                         </ul>
                         <ul>
                         {product.isAllure && 
-                        // console.log(badges.name.allure)
                         Object.keys(badges[3].name.allure).map((item, i)=>{
-                          console.log(item)
-                          const badge = {value: badges[3].name.allure[item]}
+                          const badge = {name: 'allure', value: badges[3].name.allure[item]}
                           return(
                             <li key={product.skuId + 'allure' + item}>
                             <label htmlFor={item}>

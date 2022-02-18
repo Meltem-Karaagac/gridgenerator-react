@@ -85,7 +85,6 @@ class App extends React.Component {
     this.handleTabClick = this.handleTabClick.bind(this);
     this.handleBirbFormSubmit = this.handleBirbFormSubmit.bind(this);
     this.closeModal = this.closeModal.bind(this);
-    this.checkBadge = this.checkBadge.bind(this);
     this.setBadge = this.setBadge.bind(this);
     this.showAllureYears = this.showAllureYears.bind(this);
   }
@@ -178,26 +177,14 @@ class App extends React.Component {
 
   setBadge(productIdx, badge) {
     console.log('badge', badge)
+    const isAllure = badge.name != 'allure' ? false : true;
     const { products } = this.state;
-    const productImage = products[productIdx].image;
-    const newBadge = this.checkBadge(badge, productImage);
-    const newProduct = { ...products[productIdx], badge: { name: badge.name, value: newBadge } };
+    const newProduct = { ...products[productIdx], badge };
+    const nextNewProduct = { ...newProduct, isAllure };
+    console.log('nextNewProduct', newProduct)
     const newProducts = [...products];
-    newProducts[productIdx] = newProduct;
+    newProducts[productIdx] = nextNewProduct;
     this.setState({ products: newProducts });
-  }
-
-  checkBadge(badge, productImage) {
-    if (badge.name === 'Allure') {
-      let imageURL = productImage.split('?')[1] === undefined ? '' : productImage.split('?')[1].concat('&');
-      imageURL = imageURL.includes('clean') ? '' : imageURL;
-      if (imageURL === '') {
-        this.setState({ modalStyle: 'block', modalMessage: 'no allure badge available in Sephora database by default. Adding Allure 2018 badge.' });
-        return ('pb=2020-03-allure-best-2018&');
-      }
-      return (imageURL);
-    }
-    return (badge.value);
   }
 
   handleTabClick(event) {
