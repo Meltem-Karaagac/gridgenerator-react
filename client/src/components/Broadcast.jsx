@@ -165,10 +165,11 @@ function Broadcast(props) {
                         // console.log(badges.name.allure)
                         Object.keys(badges[3].name.allure).map((item, i)=>{
                           console.log(item)
+                          const badge = {value: badges[3].name.allure[item]}
                           return(
                             <li key={product.skuId + 'allure' + item}>
                             <label htmlFor={item}>
-                              <input type="radio" id={item} name={name} onChange={() => showAllureYears(index)} />
+                              <input type="radio" id={item} name={name} onChange={() => setBadge(index, badge)} />
                               {' '}
                               {item}
                             </label>

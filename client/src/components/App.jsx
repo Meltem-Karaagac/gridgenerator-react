@@ -177,6 +177,7 @@ class App extends React.Component {
   }
 
   setBadge(productIdx, badge) {
+    console.log('badge', badge)
     const { products } = this.state;
     const productImage = products[productIdx].image;
     const newBadge = this.checkBadge(badge, productImage);
