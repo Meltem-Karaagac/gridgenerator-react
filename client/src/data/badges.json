@@ -1,0 +1,22 @@
+[
+    {
+      "name": "None",
+      "value": ""
+    },
+    {
+      "name": "Clean",
+      "value": "pb=2020-03-sephora-clean-2019&"
+    },
+    {
+      "name": "Clean+",
+      "value": "pb=clean-planet-positive-badge-2021&"
+    },
+    {
+      "name": "Allure",
+      "value": "pb=2020-03-allure-best-2018&"
+    },
+    {
+      "name": "Value",
+      "value": "pb=2020-03-sephora-value-2019&"
+    }
+  ]
