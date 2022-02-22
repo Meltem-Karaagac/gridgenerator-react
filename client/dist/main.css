@@ -149,6 +149,12 @@ textarea {
   font-size: 100%; /* 1 */
   line-height: 1.15; /* 1 */
   margin-left: 0; /* 2 */
+  resize: none;
+  background: white;
+}
+
+.tap button:hover, button:hover {
+  background-color:rgba(0, 0, 0, .05);
 }
 
 /**
@@ -332,12 +338,12 @@ button {
 } */
 .tab button,
 #submit {
-  background-color: white;
   padding: 5px 20px;
   border: 2px solid black;
   border-radius: 20px;
   cursor: pointer;
   font-weight: 700;
+  margin-top: 15px;
   /* font-family: "Helvetica Neue", Helvetica, sans-serif; */
 }
 
@@ -367,19 +373,27 @@ label {
 #tagname,
 #typeofbirb,
 #country {
-  background-color: rgb(246, 246, 248);
+  background-color: rgb(236, 236, 246);
   border-radius: 5px;
   padding: 12px;
   margin-bottom: 10px;
   line-height: 2em;
 }
 
-#typeofgrid,
-#checkboxes,
 #badges {
+  margin-right: 10px;
+  flex: 2;
+  width: 100%;
+  min-width: 500px;
+}
+
+#typeofgrid,
+#checkboxes
+{
   display: flex;
   flex-direction: column;
   margin-right: 10px;
+  width: 50%;
 }
 
 #typeofgrid label,
@@ -391,17 +405,21 @@ label {
 
 #badges ul {
   padding: 0;
+  margin: 0;
 }
 
-#badges li {
-  list-style-type: none;
-  display: inline-block;
+#badges ul ul {
+  float:right;
+}
+
+ul li:last-item label {
+  margin: 0;
 }
 
 #badges input[type="radio"]:after,
 #badges input[type="radio"]:checked:after {
   top: -2px;
-  left: -4px;
+  left: -1px;
 }
 
 #examples {
@@ -558,7 +576,8 @@ header {
 
 #linkgens {
   flex-grow: 1;
-  margin: 0 20px 0 0;
+  margin: 0 10px 0 0;
+  min-width: 500px;
 }
 
 #links {
@@ -572,4 +591,39 @@ header {
 
 #linkgens p:first-child {
   margin-top: 0;
+}
+#badges h3 {
+  display: inline-block;
+}
+
+#badges li {
+  list-style-type: none;
+  display: inline-block;
+  text-overflow: ellipsis;
+}
+
+#badges .badge-labels label {
+  padding: 0;
+  margin: 0 0 0 7px;
+  line-height: 1;
+}
+
+#badges label {
+  margin: 0 0 0 32px;
+}
+
+.badge-labels {
+  margin-left: auto;
+  margin-right: 0;
+  float: right;
+}
+
+/* .badge-labels label {
+  writing-mode: vertical-rl;
+  margin:0;
+} */
+
+.toolbar {
+  display: flex;
+  flex-direction: column;
 }
