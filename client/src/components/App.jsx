@@ -16,36 +16,13 @@ import templatec3x1 from '../../../templates/templateC3x1';
 import templatebirb from '../../../templates/template-birb';
 import TemplateChooser from './TemplateChooser';
 import Broadcast from './Broadcast';
+import badges from '../data/badges.json';
 
 window.addEventListener('beforeunload', (e) => {
   // https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeunload
   e.preventDefault();
   e.returnValue = '';
 });
-
-const badges = [
-  {
-    name: 'None',
-    value: '',
-  },
-  {
-    name: 'Clean',
-    value: 'pb=2020-03-sephora-clean-2019&',
-  },
-  {
-    name: 'Clean+',
-    value: 'pb=clean-planet-positive-badge-2021&',
-  },
-  {
-    name: 'Allure',
-    value: 'pb=2020-03-allure-best-2018&',
-  },
-  {
-    name: 'Value',
-    value: 'pb=2020-03-sephora-value-2019&',
-  },
-
-];
 
 class App extends React.Component {
   constructor(props) {
