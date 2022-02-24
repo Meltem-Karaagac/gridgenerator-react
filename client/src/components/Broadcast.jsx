@@ -33,7 +33,7 @@ function Broadcast(props) {
             <p>Paste your HTML links here, one each line:</p>
             <textarea className="links" id="links" name="textareaValue" value={textareaValue} onChange={handleInputChange} />
           </div>
-          <button type="button" value="Submit" id="submit">Submit</button>
+          <input type="submit" value="Submit" id="submit" />
         </form>
         <div className="toolbar">
           <div className="columns">
@@ -86,7 +86,6 @@ function Broadcast(props) {
                 {' '}
                 Certona 3x1 grid
               </label>
-              <hr />
               {gridType === 'ctwobyfour' || gridType === 'cthreebyone' || gridType === 'cthreebyoneca'
                 ? (
                   <label htmlFor="certonatag">
