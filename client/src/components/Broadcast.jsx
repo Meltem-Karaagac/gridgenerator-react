@@ -33,7 +33,7 @@ function Broadcast(props) {
             <p>Paste your HTML links here, one each line:</p>
             <textarea className="links" id="links" name="textareaValue" value={textareaValue} onChange={handleInputChange} />
           </div>
-          <input type="submit" value="Submit" id="submit" />
+          <button type="submit" value="Submit" id="submit">Submit</button>
         </form>
         <div className="toolbar">
           <div className="columns">
@@ -95,7 +95,7 @@ function Broadcast(props) {
                   </label>
                 )
                 : (
-                  <label />
+                  ' '
                 )}
             </div>
             <div id="checkboxes">
