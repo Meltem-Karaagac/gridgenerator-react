@@ -246,7 +246,7 @@ class App extends React.Component {
     const {
       countryType, products, textareaValue, gridType, showTags, templateType,
       showBrand, activeTab, certonaTag, showKlarna, birbProducts, birbOnlineOnly,
-      birbBrand, birbProduct, birbLinks, birbPoints, birbSkus, birbType,
+      birbBrand, birbProduct, birbLinks, birbPoints, birbSkus, birbType, modalStyle, modalMessage,
     } = this.state;
     let productsHtml = '';
     if (products.length > 0 && gridType === 'oneup') {
@@ -349,9 +349,11 @@ class App extends React.Component {
             />
           </div>
           <Modal
-            modalStyle={this.state.modalStyle}
+            {...({
+              modalStyle,
+              modalMessage,
+            })}
             closeModal={this.closeModal}
-            modalMessage={this.state.modalMessage}
           />
         </article>
       </div>
