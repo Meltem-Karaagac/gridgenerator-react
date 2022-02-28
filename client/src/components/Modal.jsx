@@ -1,11 +1,16 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 
 function Modal(props) {
-  const {modalStyle, closeModal, modalMessage} = props;
+  const {
+    modalStyle,
+    closeModal,
+    modalMessage,
+  } = props;
   return (
     <div id="myModal" className="modal" style={{ display: modalStyle }}>
       <div className="modal-content" id="modal-content">
-        <span className="close" onClick={closeModal}>&times;</span>
+        <button type="submit" className="close" onClick={closeModal}>&times;</button>
         <p>{modalMessage}</p>
       </div>
     </div>
