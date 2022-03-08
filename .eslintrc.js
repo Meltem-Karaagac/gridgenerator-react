@@ -20,8 +20,10 @@ module.exports = {
   },
   plugins: [
     'react',
+    'jest',
   ],
   rules: {
     'no-console': 'off',
+    'linebreak-style': 0,
   },
 };
