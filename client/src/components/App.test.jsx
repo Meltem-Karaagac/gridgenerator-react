@@ -1,5 +1,6 @@
 const { testEnvironment } = require("../../../jest.config");
+const App = require("./App.jsx")
 
-/* testEnvironment('should do something...', () => {
-  // Javascript that performs the test here e.g. expect().toBE
-} */
+/* test('should do something?', () => {
+  expect();
+}); */
